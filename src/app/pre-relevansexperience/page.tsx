@@ -104,12 +104,10 @@ export default function PreRelevansExperience() {
             </div>
             <div className="text-[#1e1e1e] order-1 md:order-2">
               <h2
-                className="text-[56px] md:text-[72px] leading-[1.05]"
+                className="text-[32px] md:text-[72px] leading-[1.05]"
                 style={tuskerBold}
               >
-                PR. FELIPE
-                <br />
-                PARENTE
+                PR. FELIPE<span className="hidden md:inline"><br /></span>{" "}PARENTE
               </h2>
               <p
                 className="mt-4 text-[28px] md:text-[40px] leading-tight"
@@ -126,7 +124,7 @@ export default function PreRelevansExperience() {
           <section className="mx-auto mt-24 md:mt-36 grid max-w-[1100px] grid-cols-1 items-center gap-10 md:grid-cols-[1fr_540px] md:gap-16">
             <div className="text-[#1e1e1e] md:pl-20">
               <h2
-                className="text-[56px] md:text-[72px] leading-[1.05]"
+                className="text-[32px] md:text-[72px] leading-[1.05]"
                 style={tuskerBold}
               >
                 PR.LIPÃO
