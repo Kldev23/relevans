@@ -164,7 +164,7 @@ export function TicketButton({ label, className }: { label: string; className?: 
 
             {/* Modal card */}
             <div
-              className="relative bg-[#1e1e1e] border-[3px] border-[#151515] w-full max-w-[540px] px-[80px] py-[46px] flex flex-col items-center gap-8"
+              className="relative bg-[#1e1e1e] border-[3px] border-[#151515] w-full max-w-[540px] px-6 py-8 md:px-[80px] md:py-[46px] flex flex-col items-center gap-8"
             >
               {/* RELEVANS wordmark */}
               <div
@@ -209,7 +209,7 @@ export function TicketButton({ label, className }: { label: string; className?: 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="mt-[31px] w-full bg-[#151515] border-[3px] border-[#f9f4ea] text-[#f9f4ea] text-[20px] md:text-[24px] px-10 py-4 tracking-wide transition-transform duration-200 hover:scale-[1.02] disabled:opacity-60"
+                  className="mt-[31px] w-full bg-[#f9f4ea] border-[3px] border-[#1e1e1e] text-[#1e1e1e] text-[16px] md:text-[24px] px-4 md:px-10 py-4 tracking-wide transition-transform duration-200 hover:scale-[1.02] disabled:opacity-60"
                   style={tuskerBold}
                 >
                   {submitting ? "ENVIANDO..." : "COMPRAR INGRESSO AGORA"}
