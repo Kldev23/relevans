@@ -124,7 +124,7 @@ export function TicketButton({ label, className }: { label: string; className?: 
 
       {mounted && portalReady && createPortal(
         <div
-          className={`fixed inset-0 z-[9999] flex items-center justify-center p-6 transition-opacity duration-300 ease-out ${
+          className={`fixed inset-0 z-[9999] flex items-center justify-center px-2 md:p-6 transition-opacity duration-300 ease-out ${
             visible ? "opacity-100" : "opacity-0"
           }`}
           style={{
@@ -137,7 +137,7 @@ export function TicketButton({ label, className }: { label: string; className?: 
           aria-modal="true"
         >
           <div
-            className={`relative transition-all duration-300 ease-out ${
+            className={`relative w-full md:w-auto transition-all duration-300 ease-out ${
               visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
             onClick={(e) => e.stopPropagation()}
