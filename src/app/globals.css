@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Tusker Grotesk';
+  src: url('/fonts/TuskerGrotesk-5500Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tusker Grotesk';
+  src: url('/fonts/TuskerGrotesk-5600Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tusker Grotesk';
+  src: url('/fonts/TuskerGrotesk-5700Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-lime: #c1fc32;
   --color-dark: #1e1e1e;
