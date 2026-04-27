@@ -96,7 +96,7 @@ export function TicketButton({ label, className }: { label: string; className?: 
     e.preventDefault();
     setSubmitting(true);
     try {
-      const res = await fetch(
+      await fetch(
         "https://n8n-rockett-n8n.wormxu.easypanel.host/webhook/REXP2026-Forms",
         {
           method: "POST",
@@ -104,35 +104,10 @@ export function TicketButton({ label, className }: { label: string; className?: 
           body: JSON.stringify(form),
         }
       );
-
-      // Se fetch seguiu um 302, res.url é o destino final
-      if (res.redirected && res.url) {
-        window.location.href = res.url;
-        return;
-      }
-
-      const text = await res.text().catch(() => null);
-      console.log("[webhook] status:", res.status, "body:", text);
-
-      let data: Record<string, unknown> | null = null;
-      try { data = text ? JSON.parse(text) : null; } catch { /* not json */ }
-
-      const redirectUrl =
-        (typeof data === "string" ? data : null) ??
-        data?.redirectUrl ??
-        data?.redirect ??
-        data?.url ??
-        null;
-
-      if (redirectUrl && typeof redirectUrl === "string") {
-        window.location.href = redirectUrl;
-        return;
-      }
     } catch {
       // silently continue — don't block user on network error
     }
-    setSubmitting(false);
-    closeModal();
+    window.location.href = "https://dub.sh/trafegoREXP";
   };
 
   return (
