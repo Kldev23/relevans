@@ -61,7 +61,7 @@ export default function PreRelevansExperience() {
 
         {/* Hero video teaser — overlaps title bottom slightly */}
         <ScrollSlideUp>
-          <div className="relative mx-auto -mt-[8%] w-full max-w-[1007px] aspect-[1007/566] overflow-hidden outline outline-[5px] outline-[#1E1E1E]">
+          <div className="relative mx-auto -mt-[8%] w-full max-w-[1007px] aspect-[392/479] md:aspect-[1007/566] overflow-hidden outline outline-[5px] outline-[#1E1E1E]">
             <HeroVideoDialog
               className="block h-full w-full [&>div:first-child]:h-full [&>div:first-child]:w-full"
               animationStyle="from-center"
