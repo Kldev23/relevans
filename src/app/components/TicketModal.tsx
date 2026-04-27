@@ -96,7 +96,7 @@ export function TicketButton({ label, className }: { label: string; className?: 
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch(
+      const res = await fetch(
         "https://n8n-rockett-n8n.wormxu.easypanel.host/webhook/REXP2026-Forms",
         {
           method: "POST",
@@ -104,6 +104,12 @@ export function TicketButton({ label, className }: { label: string; className?: 
           body: JSON.stringify(form),
         }
       );
+      const data = await res.json().catch(() => null);
+      const redirectUrl = data?.redirectUrl ?? data?.redirect ?? data?.url ?? null;
+      if (redirectUrl) {
+        window.location.href = redirectUrl;
+        return;
+      }
     } catch {
       // silently continue — don't block user on network error
     }
