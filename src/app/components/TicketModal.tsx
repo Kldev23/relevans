@@ -104,9 +104,27 @@ export function TicketButton({ label, className }: { label: string; className?: 
           body: JSON.stringify(form),
         }
       );
-      const data = await res.json().catch(() => null);
-      const redirectUrl = data?.redirectUrl ?? data?.redirect ?? data?.url ?? null;
-      if (redirectUrl) {
+
+      // Se fetch seguiu um 302, res.url é o destino final
+      if (res.redirected && res.url) {
+        window.location.href = res.url;
+        return;
+      }
+
+      const text = await res.text().catch(() => null);
+      console.log("[webhook] status:", res.status, "body:", text);
+
+      let data: Record<string, unknown> | null = null;
+      try { data = text ? JSON.parse(text) : null; } catch { /* not json */ }
+
+      const redirectUrl =
+        (typeof data === "string" ? data : null) ??
+        data?.redirectUrl ??
+        data?.redirect ??
+        data?.url ??
+        null;
+
+      if (redirectUrl && typeof redirectUrl === "string") {
         window.location.href = redirectUrl;
         return;
       }
