@@ -41,7 +41,7 @@ function Field({
   );
 }
 
-export function TicketButton({ label }: { label: string }) {
+export function TicketButton({ label, className }: { label: string; className?: string }) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -116,7 +116,7 @@ export function TicketButton({ label }: { label: string }) {
       <button
         type="button"
         onClick={openModal}
-        className="inline-flex items-center justify-center bg-[#d91d23] border-[3px] border-[#1e1e1e] text-[#1e1e1e] px-10 py-6 text-[28px] md:text-[32px] tracking-wide transition-transform duration-300 ease-out hover:scale-[1.05]"
+        className={`inline-flex items-center justify-center bg-[#d91d23] border-[3px] border-[#1e1e1e] text-[#1e1e1e] px-4 py-4 md:px-10 md:py-6 text-[20px] md:text-[32px] tracking-wide transition-transform duration-300 ease-out hover:scale-[1.05]${className ? ` ${className}` : ""}`}
         style={tuskerBold}
       >
         {label}

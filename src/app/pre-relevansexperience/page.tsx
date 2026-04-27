@@ -74,17 +74,24 @@ export default function PreRelevansExperience() {
 
         {/* Date + CTA row */}
         <ScrollSlideUp delay={0.05}>
-          <div className="mx-auto mt-6 flex max-w-[1007px] items-center justify-between gap-6 text-[#1e1e1e] text-[32px] md:text-[50px]">
-            <span style={tuskerBold}>16.MAIO</span>
-            <TicketButton label="GARANTIR MEU INGRESSO" />
-            <span style={tuskerBold}>16H—22H</span>
+          <div className="mx-auto mt-6 max-w-[1007px] text-[#1e1e1e]">
+            <div className="flex items-center justify-between text-[28px] md:text-[50px]">
+              <span style={tuskerBold}>16.MAIO</span>
+              <div className="hidden md:block">
+                <TicketButton label="GARANTIR MEU INGRESSO" />
+              </div>
+              <span style={tuskerBold}>16H—22H</span>
+            </div>
+            <div className="mt-4 md:hidden">
+              <TicketButton label="GARANTIR MEU INGRESSO" className="w-full" />
+            </div>
           </div>
         </ScrollSlideUp>
 
         {/* Speaker 1 — PR. FELIPE PARENTE */}
         <ScrollSlideUp>
           <section className="mx-auto mt-32 md:mt-48 grid max-w-[1100px] grid-cols-1 items-center gap-10 md:grid-cols-[540px_1fr] md:gap-16">
-            <div className="relative mx-auto w-full max-w-[540px]">
+            <div className="relative mx-auto w-full max-w-[540px] order-2 md:order-1">
               <div className="absolute inset-0 translate-x-5 translate-y-5 bg-[#d91d23]" />
               <div className="relative aspect-[540/566] overflow-hidden">
                 <Image
@@ -95,7 +102,7 @@ export default function PreRelevansExperience() {
                 />
               </div>
             </div>
-            <div className="text-[#1e1e1e]">
+            <div className="text-[#1e1e1e] order-1 md:order-2">
               <h2
                 className="text-[56px] md:text-[72px] leading-[1.05]"
                 style={tuskerBold}
@@ -117,7 +124,7 @@ export default function PreRelevansExperience() {
         {/* Speaker 2 — PR. LIPÃO */}
         <ScrollSlideUp>
           <section className="mx-auto mt-24 md:mt-36 grid max-w-[1100px] grid-cols-1 items-center gap-10 md:grid-cols-[1fr_540px] md:gap-16">
-            <div className="order-2 text-[#1e1e1e] md:order-1 md:pl-20">
+            <div className="text-[#1e1e1e] md:pl-20">
               <h2
                 className="text-[56px] md:text-[72px] leading-[1.05]"
                 style={tuskerBold}
@@ -133,7 +140,7 @@ export default function PreRelevansExperience() {
                 Igreja Onda Dura
               </p>
             </div>
-            <div className="relative order-1 mx-auto w-full max-w-[540px] md:order-2">
+            <div className="relative mx-auto w-full max-w-[540px]">
               <div className="absolute inset-0 translate-x-5 translate-y-5 bg-[#d91d23]" />
               <div className="relative aspect-[540/566] overflow-hidden">
                 <Image
@@ -150,7 +157,7 @@ export default function PreRelevansExperience() {
         {/* Description */}
         <ScrollSlideUp>
           <p
-            className="mx-auto mt-[256px] max-w-[820px] text-center text-[#1e1e1e] text-[24px] md:text-[36px] leading-snug"
+            className="mx-auto mt-16 md:mt-[256px] max-w-[820px] text-center text-[#1e1e1e] text-[20px] md:text-[36px] leading-snug"
             style={tuskerMed}
           >
             No dia 16 de Maio, das 16h às 22h, abriremos nossas portas e nosso
@@ -162,13 +169,13 @@ export default function PreRelevansExperience() {
         {/* CTA 2 */}
         <ScrollSlideUp delay={0.1}>
           <div className="mt-10 flex justify-center">
-            <TicketButton label="GARANTIR MEU INGRESSO" />
+            <TicketButton label="GARANTIR MEU INGRESSO" className="w-full md:w-auto" />
           </div>
         </ScrollSlideUp>
 
         {/* Divider */}
         <div
-          className="mt-[20rem] border-t border-[#1e1e1e]/80 relative"
+          className="mt-16 md:mt-[20rem] border-t border-[#1e1e1e]/80 relative"
           style={{
             width: "100vw",
             left: "50%",
